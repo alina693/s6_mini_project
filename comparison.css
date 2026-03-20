@@ -1,0 +1,187 @@
+/* ═══════════════════════════════════════════════════════════
+   comparison.css — Station vs Hardware Comparison Section
+   ═══════════════════════════════════════════════════════════ */
+
+.comparison-section {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 16px;
+    padding: 24px;
+    margin: 16px auto;
+    max-width: 900px;
+}
+
+/* ── Header ─────────────────────────────────────────────── */
+.comp-title-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+}
+
+.comp-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #e6edf3;
+}
+
+.comp-badge {
+    background: rgba(79, 195, 247, 0.15);
+    color: #4fc3f7;
+    border: 1px solid rgba(79, 195, 247, 0.3);
+    border-radius: 20px;
+    padding: 3px 10px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.comp-subtitle {
+    font-size: 0.82rem;
+    color: #8b949e;
+    margin: 0 0 16px 0;
+    line-height: 1.5;
+}
+
+/* ── Chart ──────────────────────────────────────────────── */
+.comp-chart-wrap {
+    background: #0d1117;
+    border-radius: 10px;
+    padding: 12px;
+    margin-bottom: 12px;
+    overflow: hidden;
+}
+
+#comparisonChart {
+    width: 100%;
+    display: block;
+}
+
+/* ── Legend ─────────────────────────────────────────────── */
+.comp-legend {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+}
+
+.comp-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.82rem;
+    color: #c9d1d9;
+}
+
+.comp-legend-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+/* ── Accuracy cards ─────────────────────────────────────── */
+.comp-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.comp-card {
+    background: #0d1117;
+    border: 1px solid #21262d;
+    border-radius: 12px;
+    padding: 14px 12px;
+    text-align: center;
+}
+
+.comp-card-icon {
+    font-size: 1.3rem;
+    margin-bottom: 6px;
+}
+
+.comp-card-title {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #8b949e;
+    margin-bottom: 6px;
+}
+
+.comp-card-val {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #e6edf3;
+    margin-bottom: 6px;
+}
+
+.comp-card-desc {
+    font-size: 0.7rem;
+    color: #8b949e;
+    line-height: 1.4;
+}
+
+/* ── Note ───────────────────────────────────────────────── */
+.comp-note {
+    font-size: 0.75rem;
+    color: #8b949e;
+    background: rgba(255,255,255,0.02);
+    border-radius: 8px;
+    padding: 10px 14px;
+    border: 1px solid #21262d;
+    line-height: 1.5;
+}
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 600px) {
+    .comp-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ── Time range toggle ──────────────────────────────────── */
+.comp-toggle-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.comp-toggle {
+    background: transparent;
+    border: 1px solid #30363d;
+    border-radius: 20px;
+    color: #8b949e;
+    padding: 5px 14px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.comp-toggle:hover {
+    border-color: #f4872a;
+    color: #f4872a;
+}
+
+.comp-toggle.active {
+    background: #f4872a;
+    border-color: #f4872a;
+    color: #fff;
+    font-weight: 600;
+}
+
+/* ── Loading state ──────────────────────────────────────── */
+.comp-loading {
+    text-align: center;
+    color: #8b949e;
+    font-size: 0.85rem;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.comp-chart-wrap {
+    position: relative;
+}

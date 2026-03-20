@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live AQI Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.fullscreen/3.0.2/Control.FullScreen.min.css"/>
+    <link rel="stylesheet" href="sensor.css">
+    <link rel="stylesheet" href="prediction.css">
+    <link rel="stylesheet" href="comparison.css">
+</head>
+<body>
+<div class="haze-overlay"></div>
+
+<header class="navbar">
+    <div class="logo">AQI<sup>®</sup></div>
+
+    <form class="search-box" onsubmit="searchLocation(); return false;">
+        <input type="text" id="cityInput" placeholder="Search any Location, City, State or Country">
+        <button type="submit">Search</button>
+    </form>
+
+    <button class="current-btn" onclick="getCurrentLocation()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-right:6px;vertical-align:middle">
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M12 2v3M12 19v3M2 12h3M19 12h3"/>
+        </svg>
+        Locate Me
+    </button>
+</header>
+
+<div class="location-strip" id="locationStrip"></div>
+
+<div id="map"></div>
+
+<div class="tab-row">
+    <button class="tab-btn active" onclick="switchTab(this,'aqi')">🌫️ AQI</button>
+    <button class="tab-btn" onclick="switchTab(this,'weather')">☀️ Weather</button>
+</div>
+
+<main class="main-card" id="resultCard">
+    <h1>Real-time Air Quality Index (AQI)</h1>
+    <a href="#" class="location-link" id="locationName">Search a city to get started</a>
+    <p id="updateTime">Enter a city, country or region in the search bar above</p>
+
+    <div class="card-body">
+        <div class="aqi-display">
+            <div class="live-tag"><span class="live-dot"></span>Live AQI</div>
+            <div class="aqi-value">
+                <div class="number" id="aqiNumber">--</div>
+                <div class="unit">AQI (US)</div>
+            </div>
+            <div class="aqi-status-box" id="aqiStatus">--</div>
+            <div class="pollutants">
+                <div class="poll-item">
+                    <div class="poll-label">PM2.5</div>
+                    <div class="poll-value" id="pm25">-- <sup>μg/m³</sup></div>
+                </div>
+                <div class="poll-item">
+                    <div class="poll-label">PM10</div>
+                    <div class="poll-value" id="pm10">-- <sup>μg/m³</sup></div>
+                </div>
+            </div>
+            <div class="aqi-scale">
+                <div class="scale-track">
+                    <div class="scale-pin" id="scalePin" style="left:0%"></div>
+                </div>
+                <div class="scale-names">
+                    <span>Good</span>
+                    <span>Moderate</span>
+                    <span>Poor</span>
+                    <span>Unhealthy</span>
+                    <span>Severe</span>
+                    <span>Hazardous</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="weather-widget">
+            <div class="weather-main">
+                <div class="weather-icon">🌡️</div>
+                <div>
+                    <div class="weather-temp">
+                        <span id="temp">--</span>
+                        <span class="deg">°C</span>
+                    </div>
+                    <div class="weather-cond" id="weatherCond">--</div>
+                </div>
+            </div>
+            <div class="weather-stats">
+                <div class="wx-stat">
+                    <span class="wx-ico">💧</span>
+                    <span class="wx-lbl">Humidity</span>
+                    <span class="wx-val"><span id="humidity">--</span>%</span>
+                </div>
+                <div class="wx-stat">
+                    <span class="wx-ico">🌬️</span>
+                    <span class="wx-lbl">Wind Speed</span>
+                    <span class="wx-val"><span id="wind">--</span> km/h</span>
+                </div>
+                <div class="wx-stat">
+                    <span class="wx-ico">☀️</span>
+                    <span class="wx-lbl">UV Index</span>
+                    <span class="wx-val" id="uv">--</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.fullscreen/3.0.2/Control.FullScreen.min.js"></script>
+<script src="script.js"></script>
+<script src="sensor.js"></script>
+<script src="prediction.js"></script>
+<script src="comparison.js"></script>
+</body>
+</html>

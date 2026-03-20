@@ -1,0 +1,219 @@
+/* ═══════════════════════════════════════════════════════════
+   prediction.css — AI Forecast Section Styles
+   ═══════════════════════════════════════════════════════════ */
+
+.prediction-section {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 16px;
+    padding: 24px;
+    margin: 16px auto;
+    max-width: 900px;
+}
+
+/* ── Header ─────────────────────────────────────────────── */
+.pred-header {
+    margin-bottom: 20px;
+}
+
+.pred-title-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+}
+
+.pred-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #e6edf3;
+    letter-spacing: 0.03em;
+}
+
+.pred-subtitle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.conf-badge {
+    font-size: 0.75rem;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+.conf-real {
+    background: rgba(0, 228, 64, 0.15);
+    color: #00e400;
+    border: 1px solid rgba(0, 228, 64, 0.3);
+}
+.conf-est {
+    background: rgba(255, 204, 0, 0.15);
+    color: #ffcc00;
+    border: 1px solid rgba(255, 204, 0, 0.3);
+}
+
+.conf-level {
+    font-size: 0.75rem;
+    color: #8b949e;
+}
+
+.pred-trend-row {
+    font-size: 0.85rem;
+    color: #8b949e;
+    margin-top: 4px;
+}
+
+/* ── 3-day Cards ────────────────────────────────────────── */
+.pred-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.pred-loading {
+    color: #8b949e;
+    font-size: 0.9rem;
+    padding: 20px;
+    text-align: center;
+    grid-column: 1 / -1;
+}
+
+.pred-card {
+    background: #0d1117;
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.pred-card:hover {
+    transform: translateY(-2px);
+}
+
+.pred-card-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #8b949e;
+    margin-bottom: 2px;
+}
+
+.pred-card-date {
+    font-size: 0.8rem;
+    color: #c9d1d9;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.pred-card-aqi {
+    font-size: 2.2rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 2px;
+}
+
+.pred-card-aqi-label {
+    font-size: 0.65rem;
+    color: #8b949e;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 6px;
+}
+
+.pred-card-mq135 {
+    font-size: 0.8rem;
+    color: #8b949e;
+    margin-bottom: 6px;
+}
+
+.pred-card-level {
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.pred-mask-badge {
+    background: rgba(244, 135, 42, 0.15);
+    color: #f4872a;
+    border: 1px solid rgba(244, 135, 42, 0.3);
+    border-radius: 20px;
+    padding: 3px 10px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.pred-no-mask {
+    background: rgba(0, 228, 64, 0.1);
+    color: #00e400;
+    border: 1px solid rgba(0, 228, 64, 0.2);
+    border-radius: 20px;
+    padding: 3px 10px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    display: inline-block;
+}
+
+/* ── Warning Banner ─────────────────────────────────────── */
+.pred-warning-banner {
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-bottom: 16px;
+}
+
+.banner-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.banner-advice {
+    margin: 0;
+    padding-left: 18px;
+    list-style: none;
+}
+
+.banner-advice li {
+    font-size: 0.82rem;
+    color: #c9d1d9;
+    padding: 3px 0;
+}
+
+.banner-advice li::before {
+    content: "→ ";
+    color: #8b949e;
+}
+
+/* ── News Context ───────────────────────────────────────── */
+.pred-news {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    padding: 12px 14px;
+    border: 1px solid #21262d;
+}
+
+.news-icon {
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.news-text {
+    font-size: 0.8rem;
+    color: #8b949e;
+    line-height: 1.5;
+}
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 600px) {
+    .pred-cards {
+        grid-template-columns: 1fr;
+    }
+}
