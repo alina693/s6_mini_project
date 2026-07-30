@@ -2,9 +2,6 @@
 
 > Real-time air quality monitoring powered by a custom ESP32 hardware sensor, with an AI model that predicts pollution 3 days ahead. Includes a live comparison between official government AQI stations and hands-on hardware readings.
 
-**Replace this line with a demo GIF/screenshot once you have one — it matters more than any paragraph below.**
-
----
 
 ## 🧠 What This Project Does
 
