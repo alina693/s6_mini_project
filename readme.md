@@ -119,16 +119,4 @@ insert_sensor.php ──► MySQL (aqi_sensor DB)
 
 ## 🔒 Security Note
 
-This project currently has API keys hardcoded directly in the JS/PHP/Python source for local development. **Before deploying publicly, move these to environment variables** and add `.env` to `.gitignore` — the values are for local testing only and should be rotated if this repo goes public with the original keys still in the commit history.
-
----
-
-## 🧩 What I Learned / Challenges Solved
-
-*(Write 3–5 sentences here in your own words — this section is what actually gets recruiters' attention. Talk about things like: designing the ML fallback chain, handling stale/missing sensor data, calibrating the MQ-135 raw readings into an estimated AQI scale, or debugging the geolocation vs station-location mismatch on the map.)*
-
----
-
-## 📸 Screenshots
-
-*(Add 2–3 screenshots or a GIF here: the main dashboard, the comparison chart, and the AI forecast cards.)*
+This project currently has API keys hardcoded directly in the JS/PHP/Python source for local development. **Before deploying publicly, move these to environment variables the values are for local testing only and should be rotated if this repo goes public with the original keys still in the commit history.
